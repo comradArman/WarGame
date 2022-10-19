@@ -30,9 +30,11 @@ public class Player {
 	public void describe() {
 		System.out.println("Player: " + this.name);
 		System.out.println("Score: " + this.score);
-		System.out.println("has hand: ");
-		System.out.println(hand.toString());
-		
+		//System.out.println("has hand: ");
+		//System.out.println(hand.toString());
+		for (Cards card : hand) {
+			card.describe();
+		}
 	}	
 	public void draw(Deck d) {
 			
@@ -55,9 +57,9 @@ public class Player {
 	
 	
 	
-	public void incrementScore() {
+	public int incrementScore() {
 		
-		this.score++;
+		return this.score++;
 	}
 	
 	public int handSize() {

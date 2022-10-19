@@ -13,8 +13,14 @@ public class Deck {
 			deckList.add(new Cards(i, " of spades"));
 			deckList.add(new Cards(i, " of clubs"));
 		}
-
 	}
+		public void describeD() {
+			for(Cards card : deckList) {
+				//System.out.println(card.getSuite());
+				//card.describe();
+			}
+		}
+	
 	
 	public List<Cards> getCards(){
 		
@@ -47,12 +53,9 @@ public class Deck {
 				card.setSuite(suite + " of diamonds");
 			}
 
-		}
+}
 		
 		return suiteList;
-
-		
-
 			
 			
 		}
@@ -65,9 +68,9 @@ public class Deck {
 	
 	public Cards draw() {
 		
-		Cards selectedCard = this.deckList.get(deckList.size() - 1);
-		
-		this.deckList.remove(this.deckList.size() - 1);
+		//Cards selectedCard = this.deckList.get(deckList.size() - 1);
+		Cards selectedCard = this.deckList.get(0);
+		this.deckList.remove(selectedCard);
 		
 		return selectedCard;
 	}

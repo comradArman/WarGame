@@ -7,11 +7,10 @@ public class App {
 		
 		Deck d = new Deck();
 		
-		
+		d.describeD();
 	
-		for(Cards card : d.deckList) {
-			card.describe();
-		}
+		
+		
 		
 		d.shuffle() ;
 		
@@ -23,48 +22,53 @@ public class App {
 		
 		Player T = new Player("T");
 		
-		for(int i = 0; i < 26; i++) {
+		for(int i = 0; i < 52; i++) {
 			
 			if (i % 2 == 0) {
 				
 				B.draw(d);
-				
-			} else { 
-				
+			
+			}else { 
+			 
 				T.draw(d);
-				
-			
-			}
-			
-			int p1Val = 0;
-			int p2Val = 0;
-			int initialHandSize = B.handSize();
-
-			
-			
-			
-			B.describe();
-			T.describe();
-			
-			for (int n = 0; n < initialHandSize; n++) {
-
-				p1Val = B.flip().getValue();
-				p2Val = T.flip().getValue();
-
-				if (p1Val == p2Val) {
-					// do nothing
-					continue;
-				} else if (p1Val > p2Val) {
-					B.incrementScore();
-				} else if (p2Val > p1Val) {
-					T.incrementScore();
-				}
-				
 			}
 		}
-	}
-}
 			
+		
+			
+			for (int n = 0; n < 26; n++) {
+				Cards p1Card = B.flip();
+				Cards p2Card = T.flip();
+				
+
+				if (p1Card.getValue() > p2Card.getValue()) {
+					B.incrementScore();
+					
+				} else if (p1Card.getValue() < p2Card.getValue()) {
+					T.incrementScore();
+					
+				}
+				
+					
+				}if(B.getscore() > T.getscore()) {
+					System.out.println("Player: " + B.getName() + " WINS!" + " With a score of " + B.getscore());
+				}else if(B.getscore() < T.getscore()) {
+					System.out.println("Player: " + T.getName() + " WINS!" + " With a score of " + T.getscore());
+				
+				
+			}else {
+				System.out.println("DRAW!");
+			
+				}
+				
+				B.describe();
+				T.describe();
+			
+				
+		}
+	}
+
+		
 			
 		
 	

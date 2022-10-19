@@ -5,16 +5,19 @@ public class Cards {
 
 	private String suite;
 	
+	
 	public Cards() {
 		
 	}
 	
 	public Cards(int value, String suite) {
-
+		
+		
 		this.setSuite(suite);
 
 		this.setValue(value);
 
+	
 	}
 
 	public int getValue() {
@@ -31,6 +34,10 @@ public class Cards {
 		return this.suite;
 
 	}
+	
+	
+	
+	
 
 	public void setSuite(String suite) {
 		this.suite = suite;
@@ -38,6 +45,7 @@ public class Cards {
 	}
 
 	public void describe() {
+		System.out.println("Card name: " + value + " " + suite ) ;
 		
 	}
 
