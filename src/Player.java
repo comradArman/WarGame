@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Player {
 	
 	private List<Cards> hand = new ArrayList<>();
@@ -27,15 +29,15 @@ public class Player {
 	
 	
 	
-	public void describe() {
-		System.out.println("Player: " + this.name);
+	public void describe(Cards card) {
+		
+		System.out.println("\nPlayer: " + this.name);
+		
 		System.out.println("Score: " + this.score);
-		//System.out.println("has hand: ");
-		//System.out.println(hand.toString());
-		for (Cards card : hand) {
+		
 			card.describe();
 		}
-	}	
+		
 	public void draw(Deck d) {
 			
 			this.hand.add(d.draw());

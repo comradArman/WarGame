@@ -8,10 +8,14 @@ public class Deck {
 
 	public Deck() {
 		for (int i = 2; i < 15; i++) {
-			deckList.add(new Cards(i, " of diamonds"));
-			deckList.add(new Cards(i, " of hearts"));
-			deckList.add(new Cards(i, " of spades"));
-			deckList.add(new Cards(i, " of clubs"));
+			
+			
+			
+			
+			deckList.add(new Cards(i, "of diamonds"));
+			deckList.add(new Cards(i, "of hearts"));
+			deckList.add(new Cards(i, "of spades"));
+			deckList.add(new Cards(i, "of clubs"));
 		}
 	}
 		public void describeD() {
